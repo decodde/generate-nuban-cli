@@ -1,3 +1,8 @@
+function pad(num, size) {
+    var s = "000000000" + num;
+    return s.substr(s.length-size);
+}
+
 const nubanAlgo = {
     generate_nuban : async (serial_no,code) => {
         var snc = `${code}${serial_no}`;
@@ -13,6 +18,7 @@ const nubanAlgo = {
         for(var i=0;i<steps;i++){
             var serial_no;
             direction == "up" ? serial_no = Number(serial_no_start) + i : serial_no = serial_no_start - i;
+            serial_no = pad(serial_no,9);
             var gen = await nubanAlgo.generate_nuban(serial_no,bank_code);
             cb ? cb(gen) : generated_nuban.push(gen);
         }

@@ -2,8 +2,8 @@ const chalk = require("chalk");
 
 const conf = new (require('conf'))()
 let defaults = {
-    limit : 200000,
-    startFrom : '312730235',
+    limit : 100000,
+    startFrom : '000000000',
 }
 
 const {nubanAlgo} = require("./nubanAlgo");
