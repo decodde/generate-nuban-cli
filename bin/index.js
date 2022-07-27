@@ -20,7 +20,7 @@ program.command("generate")
     .description("Generate NUBAN list ")
     .option('-b, --bankCode <bankCode>')
     //.option('-r, --random' ,"Generates the nuban randomly. If not specified, NUBAN generatio will start from 0000000000")  #todo random
-    .option('-s, --startFrom','Where to start generating from')
+    .option('-s, --startFrom [startFrom]','Where to start generating from')
     .option('-l, --limit [limit]', 'Limit of list. Default is 100,000')
     .action(Commands.generate);
 

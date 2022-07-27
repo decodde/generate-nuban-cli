@@ -13,7 +13,15 @@ const Commands = {
         let {bankCode,limit,random,startFrom} = await data;
         if(bankCode > 0){
             limit > 0 ? limit : limit = defaults.limit;
+            
             startFrom > 0 ? "" : startFrom = defaults.startFrom;
+            console.log(startFrom);
+            if (startFrom.length > 9){
+                console.log(chalk.red.bold("Invalid NUBAN startFrom. Should not be greater than 9 digits"))
+                return;
+            }
+            console.log(chalk.yellow.bold(`Cooking up ${limit} NUBAN list for bank ${bankCode}....`));
+
             let nubans = await nubanAlgo.generate_nuban_starting_from(startFrom,'up',limit,bankCode);
             nubans.forEach((nuban, n) => {
                 console.log(chalk.green(n+"."), chalk.yellowBright(nuban));
