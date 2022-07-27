@@ -1,0 +1,26 @@
+{
+  "name": "generate-nuban-cli",
+  "version": "1.0.0",
+  "description": "CLI for generating nuban for a proferred bankCode",
+  "main": "bin/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nuban",
+    "generate",
+    "pentest"
+  ],
+  "author": "Fasina Oreoluwa",
+  "license": "ISC",
+  "bin": {
+    "generate-nuban-cli": "./bin/index.js"
+  },
+  "dependencies": {
+    "boxen": "^4.0.0",
+    "chalk": "^2.4.2",
+    "commander": "^9.4.0",
+    "conf": "^10.1.2",
+    "yargs": "^13.2.4"
+  }
+}
